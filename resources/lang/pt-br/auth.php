@@ -32,5 +32,8 @@ return [
     'message_forgot_password' => 'Fique tranquilo, nós entendemos que essas coisas acontecem. Informe o seu email que nós vamos te enviar as instruções para redefinir a sua senha.',
     'create_account' => 'Nova Conta!',
     'new_account' => 'Ainda não possui conta? Clique aqui e crie agora mesmo!',
+    'lengthErrorPassword' => 'As senhas devem conter pelo menos 8 caracteres',
+    'userExist' => 'Já existe um usuário cadastrado neste email',
+    'passwordNotCheck' => 'As senhas informadas não conferem',
 
 ];

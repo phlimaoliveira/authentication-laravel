@@ -28,17 +28,9 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
-Route::get('/register/{locale}', function ($locale) {
-    if (! in_array($locale, ['en', 'pt-br'])) {
-        abort(400);
-    }
-
-    App::setLocale($locale);
-    return view('auth.register');
-});
-
-Route::get('/register', function () {
-    return view('auth.register');
+Route::group(['namespace' => 'Auth'], function() {
+    Route::get('/register/{locale?}', 'AuthController@create')->name('user.create');
+    Route::post('/register', 'AuthController@store')->name('user.register');
 });
 
 Route::get('/forgot-password/{locale}', function ($locale) {
@@ -53,3 +45,5 @@ Route::get('/forgot-password/{locale}', function ($locale) {
 Route::get('/forgot-password', function () {
     return view('auth.forgot_password');
 });
+
+Route::post('/new_user', 'Auth\RegisterController@create')->name('users.new_account');

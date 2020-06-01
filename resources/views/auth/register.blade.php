@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{{ asset('site/sb-admin-2.css') }}" rel="stylesheet">
+  <link href="{{ asset('site/style.css') }}" rel="stylesheet">
 
 </head>
 
@@ -35,29 +35,48 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">{{ __('auth.create_account') }}</h1>
               </div>
-              <form class="user">
+              
+              <form class="user" method="POST" action="{{ route('user.register') }}">
+                @csrf
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="{{ __('auth.first_name') }}">
+                    <input type="text" class="form-control form-control-user" name="first_name" id="first_name" placeholder="{{ __('auth.first_name') }}" required autofocus>
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="{{ __('auth.last_name') }}">
+                    <input type="text" class="form-control form-control-user" name="last_name" id="last_name" placeholder="{{ __('auth.last_name') }}" required>
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="{{ __('auth.email_address') }}">
+                  <input type="email" class="form-control form-control-user" name="email" id="email" placeholder="{{ __('auth.email_address') }}" required>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="{{ __('auth.password') }}">
+                    <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="{{ __('auth.password') }}" required>
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="{{ __('auth.repeat_password') }}">
-                  </div>
+                    <input type="password" class="form-control form-control-user" name="retype_password" id="retype_password" placeholder="{{ __('auth.repeat_password') }}" required>
+                  </div>                  
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                  {{ __('auth.register') }}
-                </a>
+                
+                @if(Session::has('lengthErrorPassword'))
+                  <div class="form-group">
+                    <div class="m-0 font-weight-bold text-errors">{{ __('auth.lengthErrorPassword') }}</div>
+                  </div>
+                @endif
+
+                @if(Session::has('passwordNotCheck'))
+                  <div class="form-group">
+                    <div class="m-0 font-weight-bold text-errors">{{ __('auth.passwordNotCheck') }}</div>                
+                  </div>
+                @endif
+
+                @if(Session::has('userExist'))
+                  <div class="form-group">
+                    <div class="m-0 font-weight-bold text-errors">{{ __('auth.userExist') }}</div>                
+                  </div>
+                @endif
+                
+                <input type="submit" class="btn btn-primary btn-user btn-block" value="{{ __('auth.register') }}">                
                 <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> {{ __('auth.login_with_google') }}

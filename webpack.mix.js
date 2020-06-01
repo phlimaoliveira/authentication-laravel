@@ -11,6 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('node_modules/startbootstrap-sb-admin-2/scss/sb-admin-2.scss', 'public/site/sb-admin-2.css')
-   .scripts('node_modules/jquery/dist/jquery.js', 'public/site/jquery.js')
-   .scripts('node_modules/startbootstrap-sb-admin-2/js/sb-admin-2.min.js', 'public/site/sb-admin-2.min.js');
+mix.js('resources/js/app.js', 'public/js')
+   .sass('resources/views/scss/style.scss', 'public/site/style.css');

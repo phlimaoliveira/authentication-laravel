@@ -33,5 +33,9 @@ return [
     'message_forgot_password' => 'We get it, stuff happens. Just enter your email address below and we\'ll send you a link to reset your password!',
     'create_account' => 'Create Account!',
     'new_account' => 'Don\'t have account? Do it right now!',
+    'lengthErrorPassword' => 'Passwords must contain at least 8 characters',
+    'userExist' => 'There is already a registered user in this email',
+    'passwordNotCheck' => 'Passwords entered do not match',
+
 
 ];
