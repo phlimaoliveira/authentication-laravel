@@ -46,4 +46,6 @@ Route::get('/forgot-password', function () {
     return view('auth.forgot_password');
 });
 
-Route::post('/new_user', 'Auth\RegisterController@create')->name('users.new_account');
+Route::get('/dashboard', function() {
+    return view('panel.dashboard');
+});
