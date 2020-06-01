@@ -15,12 +15,39 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'pt-br'])) {
+        abort(400);
+    }
+
+    App::setLocale($locale);
+    return view('auth.login');
+});
+
 Route::get('/login', function () {
     return view('auth.login');
 });
 
+Route::get('/register/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'pt-br'])) {
+        abort(400);
+    }
+
+    App::setLocale($locale);
+    return view('auth.register');
+});
+
 Route::get('/register', function () {
     return view('auth.register');
+});
+
+Route::get('/forgot-password/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'pt-br'])) {
+        abort(400);
+    }
+
+    App::setLocale($locale);
+    return view('auth.forgot_password');
 });
 
 Route::get('/forgot-password', function () {

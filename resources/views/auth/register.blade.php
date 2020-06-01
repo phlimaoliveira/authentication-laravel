@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Register</title>
+  <title>{{ __('auth.title_register') }}</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -23,9 +23,9 @@
 
 <body class="bg-gradient-primary">
 
-  <div class="container">
+  <div class="container" style="margin-top:120px;">
 
-    <div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card o-hidden border-0 shadow-lg my-5" >
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
@@ -33,45 +33,45 @@
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                <h1 class="h4 text-gray-900 mb-4">{{ __('auth.create_account') }}</h1>
               </div>
               <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name">
+                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="{{ __('auth.first_name') }}">
                   </div>
                   <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name">
+                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="{{ __('auth.last_name') }}">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="{{ __('auth.email_address') }}">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="{{ __('auth.password') }}">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="{{ __('auth.repeat_password') }}">
                   </div>
                 </div>
                 <a href="login.html" class="btn btn-primary btn-user btn-block">
-                  Register Account
+                  {{ __('auth.register') }}
                 </a>
                 <hr>
                 <a href="index.html" class="btn btn-google btn-user btn-block">
-                  <i class="fab fa-google fa-fw"></i> Register with Google
+                  <i class="fab fa-google fa-fw"></i> {{ __('auth.login_with_google') }}
                 </a>
                 <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                  <i class="fab fa-facebook-f fa-fw"></i> {{ __('auth.login_with_facebook') }}
                 </a>
               </form>
               <hr>
               <div class="text-center">
-                <a class="small" href="/forgot-password">Forgot Password?</a>
+                <a class="small" href="/forgot-password">{{ __('auth.forgot_password') }}</a>
               </div>
               <div class="text-center">
-                <a class="small" href="/login">Already have an account? Login!</a>
+                <a class="small" href="/login">{{ __('auth.already_have_account') }}</a>
               </div>
             </div>
           </div>
