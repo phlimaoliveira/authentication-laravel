@@ -16,10 +16,16 @@ class AuthController extends Controller
 {
 
     // Localização Default: Português do Brasil (pt-br)
+    // Mostra página para inserção de um Novo Usuário
     public function create($locale = 'pt-br') {             
         App::setLocale($locale);
 
-        return view('auth.register');           
+        if(Auth::check()) {
+            // Usuário já está logado na aplicação
+            return redirect()->route('dashboard');
+        } else {
+            return view('auth.register');
+        }        
     }
 
     public function store(Request $request) {  
@@ -63,6 +69,17 @@ class AuthController extends Controller
     public function logout() {
         Auth::logout();
         return redirect()->route('login');
+    }
+
+    public function forgotPassword($locale = 'pt-br') {
+        App::setLocale($locale);
+        
+        if(Auth::check()) {
+            // Usuário já está logado na aplicação
+            return redirect()->route('dashboard');
+        } else {
+            return view('auth.forgot_password');
+        }
     }
 
     public function checkUser($email) {
