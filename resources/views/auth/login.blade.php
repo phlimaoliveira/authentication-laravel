@@ -39,17 +39,22 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">{{ __('auth.welcome_back') }}</h1>
                   </div>
-                  <form class="user">
+                  <form class="user" method="POST" action="{{ route('user.auth') }}">
+                    @csrf
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" name="emailInput" aria-describedby="emailHelp" placeholder="{{ __('auth.email') }}">
+                      <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="{{ __('auth.email') }}">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="passwordInput" placeholder="{{ __('auth.password') }}">
+                      <input type="password" class="form-control form-control-user" name="password" placeholder="{{ __('auth.password') }}">
                     </div>
+
+                    @if(Session::has('authError'))
+                      <div class="form-group text-center">
+                        <div class="m-0 font-weight-bold text-errors">{{ __('auth.authError') }}</div>
+                      </div>
+                    @endif
                     
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
-                      {{ __('auth.login') }}
-                    </a>
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="{{ __('auth.login') }}">                                          
                     <hr>
                     <a href="index.html" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> {{ __('auth.login_with_google') }}

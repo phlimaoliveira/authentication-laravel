@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 use App;
+use Auth;
 use Session;
 use App\User;
 
@@ -44,6 +45,24 @@ class AuthController extends Controller
             Session::flash('passwordNotCheck', __('auth.passwordNotCheck'));
             return Redirect::back();            
         }
+    }
+
+    public function authenticate(Request $request)
+    {        
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('dashboard');
+        } else {
+            Session::flash('authError', __('auth.authError'));
+            return Redirect::back();
+        }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('login');
     }
 
     public function checkUser($email) {

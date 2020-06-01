@@ -36,6 +36,15 @@ return [
     'lengthErrorPassword' => 'Passwords must contain at least 8 characters',
     'userExist' => 'There is already a registered user in this email',
     'passwordNotCheck' => 'Passwords entered do not match',
-
-
+    'authError' => 'Credentials don\'t mismatch',
+    'dashboard' => 'Painel de Administração',
+    'welcome' => 'Welcome',
+    'profile' => 'Profile',
+    'settings' => 'Settings',
+    'activity_log' => 'Activity Log',
+    'logout' => 'Logout',
+    'ready_to_leave' => 'Ready to Leave?',
+    'message_ready_to_leave' => 'Select "Logout" below if you are ready to end your current session.',
+    'cancel' => 'Cancel',
+    'finish_session' => 'Finish Session'
 ];

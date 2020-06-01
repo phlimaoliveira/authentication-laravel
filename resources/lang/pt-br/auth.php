@@ -35,5 +35,15 @@ return [
     'lengthErrorPassword' => 'As senhas devem conter pelo menos 8 caracteres',
     'userExist' => 'Já existe um usuário cadastrado neste email',
     'passwordNotCheck' => 'As senhas informadas não conferem',
-
+    'authError' => 'Usuário não encontrado!',
+    'dashboard' => 'Painel de Administração',
+    'welcome' => 'Bem-vindo',
+    'profile' => 'Perfil',
+    'settings' => 'Configurações',
+    'activity_log' => 'Log de Atividades',
+    'logout' => 'Sair',
+    'ready_to_leave' => 'Você deseja mesmo sair?',
+    'message_ready_to_leave' => 'Se você tem certeza, você pode finalizar esta sessão clicando no botão finalizar',
+    'cancel' => 'Cancelar',
+    'finish_session' => 'Encerrar Sessão'
 ];

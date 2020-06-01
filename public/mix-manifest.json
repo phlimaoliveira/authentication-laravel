@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/site/style.css": "/site/style.css",
     "/site/Chart.min.js": "/site/Chart.min.js",
+    "/site/bootstrap.bundle.min.js": "/site/bootstrap.bundle.min.js",
     "/site/chart-area-demo.js": "/site/chart-area-demo.js",
     "/site/chart-pie-demo.js": "/site/chart-pie-demo.js",
     "/site/jquery.easing.min.js": "/site/jquery.easing.min.js"

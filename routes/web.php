@@ -22,15 +22,16 @@ Route::get('/login/{locale}', function ($locale) {
 
     App::setLocale($locale);
     return view('auth.login');
-});
+})->name('login');
 
 Route::get('/login', function () {
     return view('auth.login');
-});
+})->name('login');
 
 Route::group(['namespace' => 'Auth'], function() {
     Route::get('/register/{locale?}', 'AuthController@create')->name('user.create');
     Route::post('/register', 'AuthController@store')->name('user.register');
+    Route::post('/auth_user', 'AuthController@authenticate')->name('user.auth');
 });
 
 Route::get('/forgot-password/{locale}', function ($locale) {
@@ -46,6 +47,7 @@ Route::get('/forgot-password', function () {
     return view('auth.forgot_password');
 });
 
-Route::get('/dashboard', function() {
-    return view('panel.dashboard');
+Route::group(['middleware' => 'auth', 'namespace' => 'Auth'], function() {
+    Route::get('/dashboard', function() { return view('panel.dashboard'); })->name('dashboard');    
+    Route::get('/logout', 'AuthController@logout')->name('user.logout');
 });
