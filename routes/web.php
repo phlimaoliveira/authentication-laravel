@@ -19,6 +19,7 @@ Route::group(['namespace' => 'Auth'], function() {
     Route::post('/register', 'AuthController@store')->name('user.register');
     Route::post('/auth_user', 'AuthController@authenticate')->name('user.auth');
     Route::get('/forgot-password/{locale?}', 'AuthController@forgotPassword')->name('forgot-password');
+    Route::post('/forgot-password', 'AuthController@forgot')->name('user.forgot-password');    
 });
 
 Auth::routes(['register' => false, 'verify' => true]);

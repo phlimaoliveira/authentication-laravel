@@ -40,13 +40,27 @@
                     <h1 class="h4 text-gray-900 mb-2">{{ __('auth.forgot_password') }}</h1>
                     <p class="mb-4">{{ __('auth.message_forgot_password') }}</p>
                   </div>
-                  <form class="user">
+                  
+                  <form class="user" method="POST" action="{{ route('user.forgot-password') }}">
+                    @csrf
+
+                    @if(Session::has('passwordSent'))
+                      <div class="form-group">
+                        <div class="m-0 font-weight-bold text-success">{{ __('auth.passwordSent') }}</div>
+                      </div>
+                    @endif
+                    
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" name="emailInput" aria-describedby="emailHelp" placeholder="{{ __('auth.email_address') }}">
+                      <input type="email" class="form-control form-control-user" name="email" aria-describedby="emailHelp" placeholder="{{ __('auth.email_address') }}">
                     </div>
-                    <a href="login.html" class="btn btn-primary btn-user btn-block">
-                      {{ __('auth.reset_password') }}
-                    </a>
+
+                    @if(Session::has('authError'))
+                      <div class="form-group">
+                        <div class="m-0 font-weight-bold text-errors text-center">{{ __('auth.authError') }}</div>
+                      </div>
+                    @endif
+
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="{{ __('auth.reset_password') }}">                                        
                   </form>
                   <hr>
                   <div class="text-center">

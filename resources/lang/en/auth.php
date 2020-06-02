@@ -50,5 +50,7 @@ return [
     'verify_email_address' => 'Verify Your Email Address',
     'notification_send_email_verification' => 'A fresh verification link has been sent to your email address.',
     'message_email_verification_dashboard' => 'Before proceeding, please check your email for a verification link. If you did not receive the email',
-    'message_link_email_verification_dashboard' => 'click here to request another'
+    'message_link_email_verification_dashboard' => 'click here to request another',
+    'passwordSent' => 'Instructions have been sent to your email',
+    'network_error' => 'A Network Error occurred. Please try again.'
 ];
