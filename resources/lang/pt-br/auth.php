@@ -45,5 +45,9 @@ return [
     'ready_to_leave' => 'Você deseja mesmo sair?',
     'message_ready_to_leave' => 'Se você tem certeza, você pode finalizar esta sessão clicando no botão finalizar',
     'cancel' => 'Cancelar',
-    'finish_session' => 'Encerrar Sessão'
+    'finish_session' => 'Encerrar Sessão',
+    'verify_email_address' => 'Verifique sua Conta',
+    'notification_send_email_verification' => 'Acabamos de enviar o email de verificação. Confira na caixa de entrada do seu email.',
+    'message_email_verification_dashboard' => 'Antes de continuar, por favor confirme sua identidade pelo email que encaminhos para você. Se você ainda não recebeu o email',
+    'message_link_email_verification_dashboard' => 'clique aqui que nós reenviaremos para você.'
 ];

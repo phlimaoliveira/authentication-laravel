@@ -46,5 +46,9 @@ return [
     'ready_to_leave' => 'Ready to Leave?',
     'message_ready_to_leave' => 'Select "Logout" below if you are ready to end your current session.',
     'cancel' => 'Cancel',
-    'finish_session' => 'Finish Session'
+    'finish_session' => 'Finish Session',
+    'verify_email_address' => 'Verify Your Email Address',
+    'notification_send_email_verification' => 'A fresh verification link has been sent to your email address.',
+    'message_email_verification_dashboard' => 'Before proceeding, please check your email for a verification link. If you did not receive the email',
+    'message_link_email_verification_dashboard' => 'click here to request another'
 ];

@@ -12,6 +12,7 @@
 */
 
 Route::get('/login/{locale?}', 'UtilsController@loadLoginPage')->name('login');
+Route::get('/email_verification', 'UtilsController@emailVerificationSend')->name('user.emailVerification');
 
 Route::group(['namespace' => 'Auth'], function() {
     Route::get('/register/{locale?}', 'AuthController@create')->name('user.create');    

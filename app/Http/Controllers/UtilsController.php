@@ -19,4 +19,8 @@ class UtilsController extends Controller
             return view('auth.login');
         }
     }
+
+    public function emailVerificationSend() {
+        return view('auth.email_notification');
+    }
 }

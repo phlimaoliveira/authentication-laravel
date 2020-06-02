@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 use App;
 use Auth;
@@ -14,6 +16,9 @@ use App\User;
 
 class AuthController extends Controller
 {
+    use RegistersUsers;
+
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     // Localização Default: Português do Brasil (pt-br)
     // Mostra página para inserção de um Novo Usuário
@@ -37,16 +42,16 @@ class AuthController extends Controller
             return Redirect::back();                      
         } else if(strcmp($request->password, $request->retype_password) === 0) {
             // Senhas são iguais
-            $user = new User();
-            $user->first_name = $request->first_name;
-            $user->last_name = $request->last_name;
-            $user->email = $request->email;
-            $user->password = Hash::make($request->password);
-            
-            $user->save();
+            $user = User::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-            // Retorna para a View de Confirmação do Email
-            return 'Usuário Cadastrado! Por favor confirme o Email';
+            $user->sendEmailVerificationNotification();
+
+            return redirect()->route('user.emailVerification');
         } else {
             Session::flash('passwordNotCheck', __('auth.passwordNotCheck'));
             return Redirect::back();            
