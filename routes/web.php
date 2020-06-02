@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/login/{locale?}', 'UtilsController@loadLoginPage')->name('login');
 
 Route::group(['namespace' => 'Auth'], function() {
@@ -24,7 +20,9 @@ Route::group(['namespace' => 'Auth'], function() {
     Route::get('/forgot-password/{locale?}', 'AuthController@forgotPassword')->name('forgot-password');
 });
 
-Route::group(['middleware' => 'auth', 'namespace' => 'Auth'], function() {
-    Route::get('/dashboard', function() { return view('panel.dashboard'); })->name('dashboard');    
-    Route::get('/logout', 'AuthController@logout')->name('user.logout');
+Auth::routes(['register' => false, 'verify' => true]);
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/dashboard/{locale?}', 'DashboardController@index')->name('dashboard');    
+    Route::get('/logout', 'Auth\AuthController@logout')->name('user.logout');
 });

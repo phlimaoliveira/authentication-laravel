@@ -37,7 +37,7 @@ return [
     'userExist' => 'There is already a registered user in this email',
     'passwordNotCheck' => 'Passwords entered do not match',
     'authError' => 'Credentials don\'t mismatch',
-    'dashboard' => 'Painel de Administração',
+    'dashboard' => 'Dashboard',
     'welcome' => 'Welcome',
     'profile' => 'Profile',
     'settings' => 'Settings',
