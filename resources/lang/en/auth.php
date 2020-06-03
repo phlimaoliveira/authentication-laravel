@@ -54,5 +54,7 @@ return [
     'passwordSent' => 'Instructions have been sent to your email',
     'network_error' => 'A Network Error occurred. Please try again.',
     'reset_password' => 'Reset Password',
+    'token_expired_title' => 'Ops, tivemos um problema',
     'forgotSucess' => 'Your password has been updated!',
+    'resetPassword' => 'Reset Password - Auth System v1.0'
 ];

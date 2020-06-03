@@ -30,7 +30,7 @@ class ForgotPasswordMail extends Mailable
      * @return $this
      */
     public function build()
-    {
-        return $this->markdown('emails.forgot')->with(['email' => $this->email, 'link' => $this->link, 'name' => $this->name]);
+    {        
+        return $this->subject(__('auth.resetPassword'))->markdown('emails.forgot')->with(['email' => $this->email, 'link' => $this->link, 'name' => $this->name]);
     }
 }

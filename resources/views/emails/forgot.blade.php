@@ -13,14 +13,14 @@
 
 <img src="{{ asset('img/laravel.png') }}">
 
-Olá {{ $name }}
+Olá {{ $name }},
 
 <p>
-asdfasdfasdfa sadfa sdf asd fa sdf as dfasdf as dfa sdf as df asdf as df asdfasdf asdf asdfas dfasdfa sd
+Nós entendemos que esse tipo de coisa acontece, então você pode redefinir a sua senha clicando no botão abaixo.
 </p>
 
 @component('mail::button', ['url' => $link])
-Resetar Senha
+Redefinir Senha
 @endcomponent
 
 
