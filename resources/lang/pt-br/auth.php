@@ -51,5 +51,7 @@ return [
     'message_email_verification_dashboard' => 'Antes de continuar, por favor confirme sua identidade pelo email que encaminhos para você. Se você ainda não recebeu o email',
     'message_link_email_verification_dashboard' => 'clique aqui que nós reenviaremos para você.',
     'passwordSent' => 'As instruções foram enviadas para o seu email',
-    'network_error' => 'Ops, parece que aconteceu algum erro na rede. Por favor, tente mais tarde.'
+    'network_error' => 'Ops, parece que aconteceu algum erro na rede. Por favor, tente mais tarde.',
+    'reset_password' => 'Redefinir Senha',
+    'forgotSucess' => 'Sua senha foi atualizada!',
 ];

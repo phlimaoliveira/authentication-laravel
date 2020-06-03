@@ -52,5 +52,7 @@ return [
     'message_email_verification_dashboard' => 'Before proceeding, please check your email for a verification link. If you did not receive the email',
     'message_link_email_verification_dashboard' => 'click here to request another',
     'passwordSent' => 'Instructions have been sent to your email',
-    'network_error' => 'A Network Error occurred. Please try again.'
+    'network_error' => 'A Network Error occurred. Please try again.',
+    'reset_password' => 'Reset Password',
+    'forgotSucess' => 'Your password has been updated!',
 ];
