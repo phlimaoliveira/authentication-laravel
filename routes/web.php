@@ -16,13 +16,13 @@ Route::get('/email_verification', 'UtilsController@emailVerificationSend')->name
 Route::view('/code_expired', 'auth.passwords.token_expired')->name('code_expired');
 
 Route::group(['namespace' => 'Auth'], function() {
-    Route::get('/register/{locale?}', 'AuthController@create')->name('user.create');    
-    Route::post('/register', 'AuthController@store')->name('user.register');
+    Route::get('/register/{locale?}', 'RegisterController@create')->name('user.create');    
+    Route::post('/register', 'RegisterController@store')->name('user.register');
     Route::post('/auth_user', 'AuthController@authenticate')->name('user.auth');
-    Route::get('/forgot-password/{locale?}', 'AuthController@forgotPassword')->name('forgot-password');
-    Route::post('/forgot-password', 'AuthController@forgot')->name('user.forgot-password');
-    Route::post('/reset_password', 'AuthController@resetPassword')->name('user.reset-password');    
-    Route::get('/passwords/reset/{token}', 'AuthController@showFormResetPassword');
+    Route::get('/forgot-password/{locale?}', 'ForgotPasswordController@forgotPassword')->name('forgot-password');
+    Route::post('/forgot-password', 'ForgotPasswordController@forgot')->name('user.forgot-password');
+    Route::post('/reset_password', 'ForgotPasswordController@resetPassword')->name('user.reset-password');    
+    Route::get('/passwords/reset/{token}', 'ForgotPasswordController@showFormResetPassword');
 });
 
 Auth::routes(['register' => false, 'verify' => true]);
