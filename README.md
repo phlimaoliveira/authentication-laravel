@@ -7,12 +7,22 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este é um Projeto Básico de implementação dos métodos de Autenticação e Verificação de Identidade junto com o Laravel na sua versão "6.x". Você está livre para baixar e modificar esses métodos conforme a sua necessidade e eu espero que isso reflita positivamente na sua produtividade para codificar seus projetos sejam eles para estudos ou profissionais, os recursos, plataformas e funcionalidades que foram implementadas são:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
+### Recursos
+
+- [Laravel 6](https://laravel.com/docs/6.x).
+- [Mailtrap.io](https://mailtrap.io/).
+- [Implementado com o SB-Admin-2 Free Bootstrap Template](https://startbootstrap.com/themes/sb-admin-2/).
+
+### Funcionalidades
+
+- Página de Login: Usuário pode se autenticar na plataforma e tem as opções de criar um Novo Cadastro caso não possua conta no sistema ainda ou solicitar e-mail para recuperação de senha que o aplicativo irá encaminhar um e-mail com as instruções de recuperação para o usuário caso ele possua cadastro. Tratamentos de exceções já foram implementados como: Usuário não tem registro no sistema / Dados Inválidos (Usuário não encontrado com E-mail ou Senha informados)
+
+<img src="{{ asset('img/prints/login_page.png') }}" alt="Login Page">
+
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
 - Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
