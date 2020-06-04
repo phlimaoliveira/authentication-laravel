@@ -21,7 +21,7 @@ Este é um Projeto Básico de implementação dos métodos de Autenticação e V
 
 - Página de Login: Usuário pode se autenticar na plataforma e tem as opções de criar um Novo Cadastro caso não possua conta no sistema ainda ou solicitar e-mail para recuperação de senha que o aplicativo irá encaminhar um e-mail com as instruções de recuperação para o usuário caso ele possua cadastro. Tratamentos de exceções já foram implementados como: Usuário não tem registro no sistema / Dados Inválidos (Usuário não encontrado com E-mail ou Senha informados)
 
-<img src="https://github.com/phlimaoliveira/authentication-laravel/blob/master/public/img/prints/login_page.png" alt="Login Page">
+<img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/login_page.png" alt="Login Page">
 
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
 - Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
