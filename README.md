@@ -15,73 +15,60 @@ Este é um Projeto Básico de implementação dos métodos de Autenticação e V
 
 - [Laravel 6](https://laravel.com/docs/6.x).
 - [Mailtrap.io](https://mailtrap.io/).
-- [Implementado com o SB-Admin-2 Free Bootstrap Template](https://startbootstrap.com/themes/sb-admin-2/).
+- [SB-Admin-2 Free Bootstrap Template](https://startbootstrap.com/themes/sb-admin-2/).
 
 ### Funcionalidades
 
-- Página de Login: Usuário pode se autenticar na plataforma e tem as opções de criar um Novo Cadastro caso não possua conta no sistema ainda ou solicitar e-mail para recuperação de senha que o aplicativo irá encaminhar um e-mail com as instruções de recuperação para o usuário caso ele possua cadastro. Tratamentos de exceções já foram implementados como: Usuário não tem registro no sistema / Dados Inválidos (Usuário não encontrado com E-mail ou Senha informados)
+**- Página de Login:** Usuário pode se autenticar na plataforma e tem as opções de criar um Novo Cadastro caso não possua conta no sistema ainda ou solicitar e-mail para recuperação de senha que o aplicativo irá encaminhar um e-mail com as instruções de recuperação para o usuário caso ele possua cadastro. Tratamentos de exceções já foram implementados como: Usuário não tem registro no sistema / Dados Inválidos (Usuário não encontrado com E-mail ou Senha informados)
 
 <img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/login_page.png" alt="Login Page">
 
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**- Nova Conta:** Usuário pode se registrar no sistema gratuitamente criando uma Nova Conta, você pode ficar livre para desabilitar essa página de cadastro, incluir novas informações e utilizá-la conforme a sua necessidade. Não se esqueça de executar o comando php artisan migrate e configurar as variáveis do banco de dados de sua preferência no arquivo .env. Logo após efetuado o cadastro o sistema envia um email para confirmação de identidade, sendo que enquanto o usuário não confirmar o e-mail não é possível ele acessar as funções do Dashboard, simulando uma "proteção contra robôs".
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/register_page.png" alt="Register Page">
 
-## Learning Laravel
+**- Esqueceu a Senha:** Usuário pode solicitar ao sistema instruções para redefinição de senha. Basta ele informar o e-mail cadastrado que o sistema redirecionara uma mensagem com o botão e um token criado para redefinição de senha. A cada solicitação o sistema deleta e cria um novo token, desta forma somente a última solicitação feita pelo usuário terá validade, caso o token seja inválido o sistema redireciona para uma página mostrando que a solicitação daquele usuário expirou.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/forgot_password_page.png" alt="Forgot Password Page">
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**- Dashboard:** O Dashboard é padrão, sem funcionalidades, todo em branco pronto para você trabalhar nas suas funcionalidades, estilizar e customizar as suas funções. Neste projeto foi utilizado o template SB-Admin-2 Free Bootstrap mas você pode ficar livre para alterar para outro de sua preferência.
 
-## Laravel Sponsors
+<img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/dashboard_page.png" alt="Dashboard Page">
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**- Pronto para tradução de textos estáticos:** Este projeto foi utilizado o recurso multi-language nativo do Laravel ([você pode conferir mais clicando neste link](https://laravel.com/docs/6.x/localization#configuring-the-locale)), onde foram utilizadas as linguagens English (en) e Português do Brasil (pt-br).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+## Configurando o projeto
 
-## Contributing
+Para utilizar esse projeto basta ter o Framework Laravel versão "6.x" configurada na sua máquina, fazer o clone deste projeto e configurar o arquivo .env, informando os dados do seu banco de dados, esteja ele hospedado em algum servidor ou não e os dados do seu servidor de email, neste projeto foi utilizado o Banco de Dados MySQL e o servidor Mailtrap.io.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+...
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+...
+...
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
+...
 
-## Code of Conduct
+Depois disso basta executar o projeto utilizando o comando php artisan serve ou você também pode utilizar qualquer ferramenta de sua preferência. Para este projeto foi utilizado o [Laragon] e eu recomendo bastante a utilização desta ferramenta, ela contribuiu bastante para a produtividade do projeto, configurando o namespace da aplicação, geração de URL do projeto e tem um terminal bacana para desenvolver e visualizar os comandos da aplicação.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Próximos Passos...
 
-## Security Vulnerabilities
+Os próximos passos para esse projeto é configurar e implementar a autenticação com servidores externos como o Google e Facebook por exemplo.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Contribua
+
+Você também quer fazer parte disso? Fez alguma melhoria no código? Me envie uma mensagem que poderemos atualizar essa versão existente no repositório com as suas contribuições.
 
 ## License
 
