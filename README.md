@@ -23,7 +23,7 @@ Este é um Projeto Básico de implementação dos métodos de Autenticação e V
 
 <img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/login_page.png" alt="Login Page">
 
-**- Nova Conta:** Usuário pode se registrar no sistema gratuitamente criando uma Nova Conta, você pode ficar livre para desabilitar essa página de cadastro, incluir novas informações e utilizá-la conforme a sua necessidade. Não se esqueça de executar o comando php artisan migrate e configurar as variáveis do banco de dados de sua preferência no arquivo .env. Logo após efetuado o cadastro o sistema envia um email para confirmação de identidade, sendo que enquanto o usuário não confirmar o e-mail não é possível ele acessar as funções do Dashboard, simulando uma "proteção contra robôs".
+**- Nova Conta:** Usuário pode se registrar no sistema gratuitamente criando uma Nova Conta, você pode ficar livre para desabilitar essa página de cadastro, incluir novas informações e utilizá-la conforme a sua necessidade. Não se esqueça de executar o comando 'php artisan migrate' e configurar as variáveis do banco de dados de sua preferência no arquivo .env. Logo após efetuado o cadastro o sistema envia um email para confirmação de identidade, sendo que enquanto o usuário não confirmar o e-mail não é possível ele acessar as funções do Dashboard, simulando uma "proteção contra robôs".
 
 <img src="https://raw.githubusercontent.com/phlimaoliveira/authentication-laravel/master/public/img/prints/register_page.png" alt="Register Page">
 
@@ -39,17 +39,17 @@ Este é um Projeto Básico de implementação dos métodos de Autenticação e V
 
 ## Configurando o projeto
 
-Para utilizar esse projeto basta ter o Framework Laravel versão "6.x" configurada na sua máquina, fazer o clone deste projeto e configurar o arquivo .env, informando os dados do seu banco de dados, esteja ele hospedado em algum servidor ou não e os dados do seu servidor de email, neste projeto foi utilizado o Banco de Dados MySQL e o servidor Mailtrap.io.
+Para utilizar esse projeto basta ter o Framework Laravel versão "6.x" configurada na sua máquina, fazer o clone deste projeto e configurar o arquivo **.env**, informando os dados do seu banco de dados, esteja ele hospedado em algum servidor ou não e os dados do seu servidor de email, neste projeto foi utilizado o Banco de Dados MySQL e o servidor Mailtrap.io.
 
-...
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
-...
-...
+```
+```
 MAIL_DRIVER=smtp
 MAIL_HOST=smtp.mailtrap.io
 MAIL_PORT=2525
@@ -58,8 +58,7 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS=null
 MAIL_FROM_NAME="${APP_NAME}"
-...
-
+```
 Depois disso basta executar o projeto utilizando o comando php artisan serve ou você também pode utilizar qualquer ferramenta de sua preferência. Para este projeto foi utilizado o [Laragon] e eu recomendo bastante a utilização desta ferramenta, ela contribuiu bastante para a produtividade do projeto, configurando o namespace da aplicação, geração de URL do projeto e tem um terminal bacana para desenvolver e visualizar os comandos da aplicação.
 
 ## Próximos Passos...
